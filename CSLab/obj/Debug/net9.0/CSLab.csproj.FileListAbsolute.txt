@@ -1,0 +1,14 @@
+/Users/user/MySolution/CSLab/bin/Debug/net9.0/CSLab
+/Users/user/MySolution/CSLab/bin/Debug/net9.0/CSLab.deps.json
+/Users/user/MySolution/CSLab/bin/Debug/net9.0/CSLab.runtimeconfig.json
+/Users/user/MySolution/CSLab/bin/Debug/net9.0/CSLab.dll
+/Users/user/MySolution/CSLab/bin/Debug/net9.0/CSLab.pdb
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/CSLab.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/CSLab.AssemblyInfoInputs.cache
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/CSLab.AssemblyInfo.cs
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/CSLab.csproj.CoreCompileInputs.cache
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/CSLab.dll
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/refint/CSLab.dll
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/CSLab.pdb
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/CSLab.genruntimeconfig.cache
+/Users/user/MySolution/CSLab/obj/Debug/net9.0/ref/CSLab.dll

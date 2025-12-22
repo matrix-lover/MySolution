@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram>
+  <Assembly Name="CSLab_7_AnimalLibrary" Version="0.0.0.0" />
+  <Class Name="CommentAttribute" FullName="AnimalLibrary.CommentAttribute" IsAbstract="false">
+    <BaseClass Name="Attribute" />
+    <Properties>
+      <Property Name="Comment" Type="String" />
+    </Properties>
+    <Methods />
+    <Constructors>
+      <Constructor>
+        <Parameters>
+          <Parameter Name="comment" Type="String" />
+        </Parameters>
+      </Constructor>
+    </Constructors>
+  </Class>
+  <Enum Name="eClassificationAnimal" FullName="AnimalLibrary.eClassificationAnimal" Comment="Classification animals by nutrition">
+    <Values>
+      <Value Name="Herbivores" Value="0" />
+      <Value Name="Carnivores" Value="1" />
+      <Value Name="Omnivores" Value="2" />
+    </Values>
+  </Enum>
+  <Enum Name="eFavoriteFood" FullName="AnimalLibrary.eFavoriteFood" Comment="Classification by favorite food">
+    <Values>
+      <Value Name="Meat" Value="0" />
+      <Value Name="Plants" Value="1" />
+      <Value Name="Everything" Value="2" />
+    </Values>
+  </Enum>
+  <Class Name="Animal" FullName="AnimalLibrary.Animal" IsAbstract="true" Comment="Abstract class of animals">
+    <Properties>
+      <Property Name="Country" Type="String" Comment="Animal country" />
+      <Property Name="Name" Type="String" Comment="Animal name" />
+      <Property Name="HideFromOtherAnimals" Type="Boolean" Comment="Hiding or not" />
+      <Property Name="WhatAnimal" Type="eClassificationAnimal" Comment="Animal classification" />
+    </Properties>
+    <Methods>
+      <Method Name="Deconstruct" ReturnType="Void">
+        <Parameters>
+          <Parameter Name="country" Type="String&amp;" />
+          <Parameter Name="name" Type="String&amp;" />
+          <Parameter Name="hideFromOtherAnimals" Type="Boolean&amp;" />
+          <Parameter Name="whatAnimal" Type="eClassificationAnimal&amp;" />
+        </Parameters>
+      </Method>
+      <Method Name="GetClassificationAnimal" ReturnType="eClassificationAnimal" />
+      <Method Name="GetFavoriteFood" ReturnType="eFavoriteFood" />
+      <Method Name="SayHello" ReturnType="Void" />
+    </Methods>
+    <Constructors>
+      <Constructor />
+      <Constructor>
+        <Parameters>
+          <Parameter Name="country" Type="String" />
+          <Parameter Name="name" Type="String" />
+          <Parameter Name="hideFromOtherAnimals" Type="Boolean" />
+        </Parameters>
+      </Constructor>
+    </Constructors>
+  </Class>
+  <Class Name="Cow" FullName="AnimalLibrary.Cow" IsAbstract="false" Comment="Cow class">
+    <BaseClass Name="Animal" />
+    <Properties />
+    <Methods>
+      <Method Name="GetFavoriteFood" ReturnType="eFavoriteFood" Comment="Get favirite food" />
+      <Method Name="SayHello" ReturnType="Void" Comment="'Say Hello' method" />
+    </Methods>
+    <Constructors>
+      <Constructor />
+      <Constructor>
+        <Parameters>
+          <Parameter Name="country" Type="String" />
+          <Parameter Name="name" Type="String" />
+          <Parameter Name="hideFromOtherAnimals" Type="Boolean" />
+        </Parameters>
+      </Constructor>
+    </Constructors>
+  </Class>
+  <Class Name="Lion" FullName="AnimalLibrary.Lion" IsAbstract="false" Comment="Lion class">
+    <BaseClass Name="Animal" />
+    <Properties />
+    <Methods>
+      <Method Name="GetFavoriteFood" ReturnType="eFavoriteFood" Comment="Get favirite food" />
+      <Method Name="SayHello" ReturnType="Void" Comment="'Say Hello' method" />
+    </Methods>
+    <Constructors>
+      <Constructor />
+      <Constructor>
+        <Parameters>
+          <Parameter Name="country" Type="String" />
+          <Parameter Name="name" Type="String" />
+          <Parameter Name="hideFromOtherAnimals" Type="Boolean" />
+        </Parameters>
+      </Constructor>
+    </Constructors>
+  </Class>
+  <Class Name="Pig" FullName="AnimalLibrary.Pig" IsAbstract="false" Comment="Pig class">
+    <BaseClass Name="Animal" />
+    <Properties />
+    <Methods>
+      <Method Name="GetFavoriteFood" ReturnType="eFavoriteFood" Comment="Get favirite food" />
+      <Method Name="SayHello" ReturnType="Void" Comment="'Say Hello' method" />
+    </Methods>
+    <Constructors>
+      <Constructor />
+      <Constructor>
+        <Parameters>
+          <Parameter Name="country" Type="String" />
+          <Parameter Name="name" Type="String" />
+          <Parameter Name="hideFromOtherAnimals" Type="Boolean" />
+        </Parameters>
+      </Constructor>
+    </Constructors>
+  </Class>
+</ClassDiagram>

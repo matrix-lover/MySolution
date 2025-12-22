@@ -1,0 +1,7 @@
+{
+    "editor.codeLens": false,
+    "editor.formatOnSave": true,
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csdevkit"
+    }
+}

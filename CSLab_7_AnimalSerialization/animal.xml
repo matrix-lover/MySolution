@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Lion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Country>Африка</Country>
+  <Name>Симба</Name>
+  <HideFromOtherAnimals>true</HideFromOtherAnimals>
+  <WhatAnimal>Carnivores</WhatAnimal>
+</Lion>
