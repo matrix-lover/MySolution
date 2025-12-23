@@ -19,7 +19,7 @@ class Program
             return;
         }
 
-        Console.Write("Введите имя файла для поиска (можно использовать *.тип): ");
+        Console.Write("Введите имя файла для поиска: ");
         string fileName = Console.ReadLine();
             
         if (string.IsNullOrEmpty(fileName))

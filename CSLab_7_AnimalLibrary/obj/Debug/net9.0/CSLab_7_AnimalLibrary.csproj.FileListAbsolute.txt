@@ -7,3 +7,4 @@
 /Users/user/MySolution/CSLab_7_AnimalLibrary/obj/Debug/net9.0/refint/CSLab_7_AnimalLibrary.dll
 /Users/user/MySolution/CSLab_7_AnimalLibrary/obj/Debug/net9.0/CSLab_7_AnimalLibrary.pdb
 /Users/user/MySolution/CSLab_7_AnimalLibrary/obj/Debug/net9.0/ref/CSLab_7_AnimalLibrary.dll
+/Users/user/MySolution/CSLab_7_AnimalLibrary/obj/Debug/net9.0/CSLab_7_AnimalLibrary.sourcelink.json

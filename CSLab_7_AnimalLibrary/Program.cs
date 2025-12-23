@@ -5,7 +5,8 @@ namespace AnimalLibrary
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Enum |
                    AttributeTargets.Struct | AttributeTargets.Method |
-                   AttributeTargets.Property | AttributeTargets.Constructor)]
+                   AttributeTargets.Property
+                   )]
 
     public class CommentAttribute : Attribute
     {
@@ -52,7 +53,7 @@ namespace AnimalLibrary
         [Comment("Animal classification")]
         public eClassificationAnimal WhatAnimal { get; set; }
 
-                public Animal()
+        public Animal()
         {
             Country = "";
             Name = "";

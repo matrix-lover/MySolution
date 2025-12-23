@@ -16,3 +16,4 @@
 /Users/user/MySolution/CSLab_7_ClassDiagram/obj/Debug/net9.0/CSLab_7_ClassDiagram.pdb
 /Users/user/MySolution/CSLab_7_ClassDiagram/obj/Debug/net9.0/CSLab_7_ClassDiagram.genruntimeconfig.cache
 /Users/user/MySolution/CSLab_7_ClassDiagram/obj/Debug/net9.0/ref/CSLab_7_ClassDiagram.dll
+/Users/user/MySolution/CSLab_7_ClassDiagram/obj/Debug/net9.0/CSLab_7_ClassDiagram.sourcelink.json
