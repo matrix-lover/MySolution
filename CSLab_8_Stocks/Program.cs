@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 class Program
 {
@@ -42,48 +43,65 @@ class Program
     {
         try
         {
-            var endDate = DateTimeOffset.Now;
-            var startDate = endDate.AddYears(-1);
-
-            var url = $"https://query1.finance.yahoo.com/v7/finance/download/{ticker}?period1={startDate.ToUnixTimeSeconds()}&period2={endDate.ToUnixTimeSeconds()}&interval=1d&events=history&includeAdjustedClose=true";
+            var url = $"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=1y";
 
             var response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
             {
-                var csvData = await response.Content.ReadAsStringAsync();
-                var lines = csvData.Split('\n');
-                double sum = 0;
-                int days = 0;
+                var json = await response.Content.ReadAsStringAsync();
 
-                for (int i = 1; i < lines.Length; i++)
+                using var doc = JsonDocument.Parse(json);
+                var root = doc.RootElement;
+
+                if (root.TryGetProperty("chart", out var chart) &&
+                    chart.TryGetProperty("result", out var result) &&
+                    result.ValueKind == JsonValueKind.Array &&
+                    result.GetArrayLength() > 0)
                 {
-                    if (string.IsNullOrEmpty(lines[i]))
-                    {
-                        continue;
-                    }
+                    var firstResult = result[0];
 
-                    var columns = lines[i].Split(',');
-
-                    if (columns.Length >= 4)
+                    if (firstResult.TryGetProperty("indicators", out var indicators) &&
+                        indicators.TryGetProperty("quote", out var quote) &&
+                        quote.ValueKind == JsonValueKind.Array &&
+                        quote.GetArrayLength() > 0)
                     {
-                        //columns[2] = High, columns[3] = Low
-                        var high = double.Parse(columns[2]);
-                        var low = double.Parse(columns[3]);
-                        sum += (high + low) / 2;
-                        days++;
+                        var quoteData = quote[0];
+                        var highArray = quoteData.GetProperty("high").EnumerateArray();
+                        var lowArray = quoteData.GetProperty("low").EnumerateArray();
+
+                        double sum = 0;
+                        int count = 0;
+
+                        var highEnumerator = highArray.GetEnumerator();
+                        var lowEnumerator = lowArray.GetEnumerator();
+
+                        while (highEnumerator.MoveNext() && lowEnumerator.MoveNext())
+                        {
+                            if (!highEnumerator.Current.ToString().Equals("null") &&
+                                !lowEnumerator.Current.ToString().Equals("null"))
+                            {
+                                var high = highEnumerator.Current.GetDouble();
+                                var low = lowEnumerator.Current.GetDouble();
+                                sum += (high + low) / 2;
+                                count++;
+                            }
+                        }
+
+                        if (count > 0)
+                        {
+                            var average = sum / count;
+                            lock (fileLock)
+                            {
+                                File.AppendAllText("results.txt", $"{ticker}:{average:F2}\n");
+                            }
+                            Console.WriteLine($"{ticker}: {average:F2}");
+                            return;
+                        }
                     }
                 }
 
-                if (days > 0)
-                {
-                    var average = sum / days;
-                    lock (fileLock)
-                    {
-                        File.AppendAllText("results.txt", $"{ticker}:{average:F2}\n");
-                    }
-                    Console.WriteLine($"{ticker}: {average:F2}");
-                }
+                throw new Exception("Неверный формат JSON-ответа");
             }
             else
             {

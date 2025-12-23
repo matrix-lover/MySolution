@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
+    "net9.0": {
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -2288,36 +2288,36 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
+    "net9.0": [
       "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.0"
     ]
   },
   "packageFolders": {
-    "/home/oleg_nechiporenko/.nuget/packages/": {}
+    "/Users/user/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/oleg_nechiporenko/RiderProjects/ConsoleApp_Lab10/ConsoleApp_Lab10/ConsoleApp_Lab10.csproj",
+      "projectUniqueName": "/Users/user/MySolution/ConsoleApp_Lab10/ConsoleApp_Lab10/ConsoleApp_Lab10.csproj",
       "projectName": "ConsoleApp_Lab10",
-      "projectPath": "/home/oleg_nechiporenko/RiderProjects/ConsoleApp_Lab10/ConsoleApp_Lab10/ConsoleApp_Lab10.csproj",
-      "packagesPath": "/home/oleg_nechiporenko/.nuget/packages/",
-      "outputPath": "/home/oleg_nechiporenko/RiderProjects/ConsoleApp_Lab10/ConsoleApp_Lab10/obj/",
+      "projectPath": "/Users/user/MySolution/ConsoleApp_Lab10/ConsoleApp_Lab10/ConsoleApp_Lab10.csproj",
+      "packagesPath": "/Users/user/.nuget/packages/",
+      "outputPath": "/Users/user/MySolution/ConsoleApp_Lab10/ConsoleApp_Lab10/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/oleg_nechiporenko/.nuget/NuGet/NuGet.Config"
+        "/Users/user/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net9.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "projectReferences": {}
         }
       },
@@ -2325,11 +2325,17 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net9.0": {
+        "targetAlias": "net9.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -2362,7 +2368,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

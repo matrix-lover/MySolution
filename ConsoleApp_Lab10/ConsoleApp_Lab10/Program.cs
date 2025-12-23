@@ -46,7 +46,7 @@ namespace Lab10_Stocks
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=StocksDb;Username=postgres;Password=pass123");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=mydatabase;Username=shack;Password=kbnick9070");
         }
     }
     
