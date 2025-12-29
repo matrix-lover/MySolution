@@ -1,0 +1,48 @@
+@page
+@model LibraryApp.Pages.Students.IndexModel
+@{
+    ViewData["Title"] = "Students";
+    Layout = "_Layout";
+}
+
+<h1>Students</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Exam Results</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var student in Model.Students)
+{
+        <tr>
+            <td>@student.FullName</td>
+            <td>
+                @if (student.ExamResults != null && student.ExamResults.Count > 0)
+                {
+                    foreach (var result in student.ExamResults)
+                    {
+                        <div>@result.Subject.Name: @result.Score</div> <!-- <-- Subject -->
+                    }
+                }
+                else
+                {
+                    <div>No results</div>
+                }
+            </td>
+            <td>
+                <a class="btn btn-sm btn-secondary" asp-page="Edit" asp-route-id="@student.Id">Edit</a>
+                <a class="btn btn-sm btn-danger" asp-page="Delete" asp-route-id="@student.Id">Delete</a>
+                <a class="btn btn-sm btn-info" asp-page="Details" asp-route-id="@student.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -31,8 +31,6 @@ class Program
         foreach (var ticker in tickers)
         {
             tasks.Add(ProcessStock(ticker));
-
-            await Task.Delay(200);
         }
         
         await Task.WhenAll(tasks);
@@ -54,17 +52,13 @@ class Program
                 using var doc = JsonDocument.Parse(json);
                 var root = doc.RootElement;
 
-                if (root.TryGetProperty("chart", out var chart) &&
-                    chart.TryGetProperty("result", out var result) &&
-                    result.ValueKind == JsonValueKind.Array &&
-                    result.GetArrayLength() > 0)
+                if (root.TryGetProperty("chart", out var chart) && chart.TryGetProperty("result", out var result) &&
+                    result.ValueKind == JsonValueKind.Array && result.GetArrayLength() > 0)
                 {
                     var firstResult = result[0];
 
-                    if (firstResult.TryGetProperty("indicators", out var indicators) &&
-                        indicators.TryGetProperty("quote", out var quote) &&
-                        quote.ValueKind == JsonValueKind.Array &&
-                        quote.GetArrayLength() > 0)
+                    if (firstResult.TryGetProperty("indicators", out var indicators) && indicators.TryGetProperty("quote", out var quote) &&
+                        quote.ValueKind == JsonValueKind.Array && quote.GetArrayLength() > 0)
                     {
                         var quoteData = quote[0];
                         var highArray = quoteData.GetProperty("high").EnumerateArray();
